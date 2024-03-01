@@ -1,0 +1,47 @@
+#editTutorialModal
+  display: block // Hide modal by default
+  position: fixed // Position fixed to keep it in the viewport
+  top: 0 // Position from the top
+  left: 0 // Position from the left
+  width: 100% // Full width
+  height: 100% // Full height
+  background-color: rgba(0, 0, 0, 0.5) // Semi-transparent black background
+  z-index: 9999 // Higher z-index to ensure it appears on top of other elements
+
+  .modal
+    display: block  // Initially hide the modal
+
+  .modal-content
+    position: absolute // Position absolute to center within the modal
+    top: 50% // Move content 50% down from the top
+    left: 50% // Move content 50% from the left
+    transform: translate(-50%, -50%) // Center horizontally and vertically
+    background-color: white // Background color of modal content
+    padding: 20px // Padding around the content
+    border-radius: 5px // Rounded corners
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) // Shadow effect
+    width: 80% // Set desired width
+    max-width: 500px // Limit maximum width
+
+    .close
+      position: absolute // Position close button
+      top: 10px // Distance from the top
+      right: 10px // Distance from the right
+      cursor: pointer // Cursor style
+
+    h2
+      text-align: center // Center heading
+
+    .form-group
+      margin-bottom: 15px // Margin bottom for form fields
+
+      label
+        display: block // Display labels as block
+        margin-bottom: 5px // Margin bottom for labels
+
+      input
+        width: 100% // Full width for input fields
+
+    button
+      display: block // Display buttons as block
+      margin: 0 auto

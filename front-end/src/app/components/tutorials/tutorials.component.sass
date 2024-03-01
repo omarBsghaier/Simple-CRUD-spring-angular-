@@ -1,0 +1,111 @@
+body
+  font-family: Arial, sans-serif
+  background-color: #f5f5f5
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  margin: 0
+
+.awesome-form
+  background: #ffffff
+  width: 100%
+  max-width: 400px
+  padding: 40px
+  border-radius: 10px
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1)
+  transition: all 0.3s ease-in-out
+
+  &:hover
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2)
+
+  h2
+    margin-bottom: 30px
+    color: #333
+
+  .form-control
+    background: none
+    border: none
+    border-bottom: 1px solid #e0e0e0
+    border-radius: 0
+    box-shadow: none
+    transition: all 0.3s ease-in-out
+
+    &:focus
+      border-color: #007BFF
+      outline: none
+
+  .btn
+    border-radius: 5px
+    background: #007BFF
+    color: #fff
+    transition: all 0.3s ease-in-out
+
+    &:hover
+      background: #0056b3
+
+option.text-muted
+  color: #6c757d
+
+.alert-right
+  position: fixed
+  button: 10%
+  right: 5%
+  padding: 5px
+  background: #369f51
+  color: white
+
+.form-group div
+  color: red
+#editTutorialModal
+  display: none /* Hide modal by default */
+  position: fixed /* Position fixed to keep it in the viewport */
+  top: 0 /* Position from the top */
+  left: 0 /* Position from the left */
+  width: 100% /* Full width */
+  height: 100% /* Full height */
+  background-color: rgba(0, 0, 0, 0.5) /* Semi-transparent black background */
+  z-index: 9999 /* Higher z-index to ensure it appears on top of other elements */
+
+  .modal-content
+    position: absolute /* Position absolute to center within the modal */
+    top: 50% /* Move content 50% down from the top */
+    left: 50% /* Move content 50% from the left */
+    transform: translate(-50%, -50%) /* Center horizontally and vertically */
+    background-color: white /* Background color of modal content */
+    padding: 20px /* Padding around the content */
+    border-radius: 5px /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) /* Shadow effect */
+    width: 80% /* Set desired width */
+    max-width: 500px /* Limit maximum width */
+
+    .close
+      position: absolute /* Position close button */
+      top: 10px /* Distance from the top */
+      right: 10px /* Distance from the right */
+      cursor: pointer /* Cursor style */
+
+    h2
+      text-align: center /* Center heading */
+
+    .form-group
+      margin-bottom: 15px /* Margin bottom for form fields */
+
+      label
+        display: block /* Display labels as block */
+        margin-bottom: 5px /* Margin bottom for labels */
+
+      input
+        width: 100% /* Full width for input fields */
+
+    button
+      display: block /* Display buttons as block */
+      margin: 0 auto /* Center button horizontally */
+.form-check-label
+  color: initial
+.form-check-label
+  width: 15px /* Adjust the width as needed */
+  display: inline-block
+.disabled-button
+  opacity: 0.5 /* Set opacity to indicate disabled state */
+  cursor: not-allowed  /* Change cursor to indicate disabled state */

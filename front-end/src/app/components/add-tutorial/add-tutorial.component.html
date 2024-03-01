@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="submit-form  row">
+    <div class="col-md-6 offset-md-3">
+      <form [formGroup]="tutorialForm" class="awesome-form" (ngSubmit)="saveTutorial()">
+      <h2 class="text-center"> add tutorial </h2>
+        <div class="form-group">
+          <label for="editTitle">Title:</label>
+          <input type="text" id="editTitle" class="form-control" formControlName="title">
+          <div *ngIf="tutorialForm.get('title')?.hasError('required') && (tutorialForm.get('title')?.touched || tutorialForm.get('title')?.dirty)">
+            Title is required.
+          </div>
+          <div *ngIf="tutorialForm.get('title')?.hasError('minlength') && (tutorialForm.get('title')?.touched || tutorialForm.get('title')?.dirty)">
+            title must be at least 3 characters long.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editDescription">Description:</label>
+          <input type="text" id="editDescription" class="form-control" formControlName="description">
+          <div *ngIf="tutorialForm.get('description')?.hasError('required') && (tutorialForm.get('description')?.touched || tutorialForm.get('description')?.dirty)">
+            Description is required.
+          </div>
+          <div *ngIf="tutorialForm.get('description')?.hasError('minlength') && (tutorialForm.get('description')?.touched || tutorialForm.get('description')?.dirty)">
+            Description must be at least 10 characters long.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="mt-4">Published:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="published" id="inlineRadio1" [value]="true">
+            <label class="form-check-label" for="inlineRadio1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="published" id="inlineRadio2" [value]="false">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>
+        </div>
+
+        <br><br>
+        <button type="submit" class="col-md-3 offset-md-4 btn  btn-block btn-primary"  >Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<span *ngIf="showSuccessAlert" class="alert alert-success alert-right" role="alert">
+  Tutorial created successfully...
+</span>
