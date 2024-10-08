@@ -24,17 +24,6 @@ public class TutorialServiceImpl implements TutorialService {
     }
 
     @Override
-    public Optional<Tutorial> getTutorialById(Long id) {
-        // Check if ID is null
-        if (id == null) {
-            throw new IllegalArgumentException("Tutorial ID cannot be null");
-        }
-
-        // Return Optional<Tutorial> from repository directly
-        return tutorialRepository.findById(id);
-    }
-
-    @Override
     public Tutorial createTutorial(Tutorial tutorial) {
         if (tutorial == null) {
             throw new IllegalArgumentException("Tutorial object cannot be null");
@@ -70,25 +59,9 @@ public class TutorialServiceImpl implements TutorialService {
         tutorialRepository.deleteAll();
     }
 
-
     @Override
     public void deleteTutorial(Long id) {
         tutorialRepository.deleteById(id);
     }
 
-    @Override
-    public List<Tutorial> findByTitle(String title) {
-        if (title == null)
-            return tutorialRepository.findAll();
-        return tutorialRepository.findByTitleContaining(title);
-    }
-
-    public Page<Tutorial> findBytitlePage(String name, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        return tutorialRepository.findByTitleContaining(name, pageable);
-    }
-    @Override
-    public List<Tutorial> findByPublished(boolean published) {
-        return tutorialRepository.findByPublished(published);
-    }
 }

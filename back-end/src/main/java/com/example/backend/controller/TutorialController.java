@@ -20,7 +20,6 @@ public class TutorialController {
 
     @GetMapping()
     public ResponseEntity<Page<Tutorial>> getAllTutorials(Pageable pageable) {
-        // Todo add request param
         Page<Tutorial> tutorialsPage = tutorialService.getAllTutorials(pageable);
         if (tutorialsPage.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -29,12 +28,6 @@ public class TutorialController {
         }
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Tutorial> getTutorialById(@PathVariable Long id) {
-        Optional<Tutorial> tutorialOptional = tutorialService.getTutorialById(id);
-        return tutorialOptional.map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
     @PostMapping
     public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
         Tutorial createdTutorial = tutorialService.createTutorial(tutorial);
@@ -57,23 +50,10 @@ public class TutorialController {
         return ResponseEntity.noContent().build();
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTutorial(@PathVariable Long id) {
         tutorialService.deleteTutorial(id);
         return ResponseEntity.noContent().build();
     }
-
-    @GetMapping("/titles")
-    public List<Tutorial> getPublishedTutorials(String title) {
-        return tutorialService.findByTitle(title);
-    }
-    @GetMapping("/titlesPage")
-    public Page<Tutorial> getUsersByContainingName(
-            @RequestParam(value = "name") String name,
-            @RequestParam(value = "page", defaultValue = "0") int page,
-            @RequestParam(value = "size", defaultValue = "5") int size) {
-        return tutorialService.findBytitlePage(name,page,size);    }
-
 
 }

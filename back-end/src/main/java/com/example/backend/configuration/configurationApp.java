@@ -10,7 +10,6 @@ import java.util.Arrays;
 @Configuration
 public class configurationApp {
 
-
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
@@ -26,4 +25,5 @@ public class configurationApp {
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
+
 }
