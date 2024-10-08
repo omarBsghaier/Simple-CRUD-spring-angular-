@@ -17,10 +17,6 @@ export class TutorialService {
     return this.http.get<Page>(`${this.baseUrl}?page=${page}&size=${size}`);
   }
 
-  getTutorialById(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
-  }
-
   createTutorial(data: Tutorial ): Observable<any> {
     return this.http.post(`${this.baseUrl}`, data);
   }
@@ -31,14 +27,9 @@ export class TutorialService {
   deleteAllTutorial(): Observable<any> {
     return this.http.delete(`${this.baseUrl}`);
   }
+
   deleteTutorial(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
-  getPublishedTutorials(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/published`);
-  }
-  getTutorialsByTitle(title: string): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(`${this.baseUrl}/titles?title=${title}`);
-  }
 }

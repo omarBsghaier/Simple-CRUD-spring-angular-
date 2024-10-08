@@ -1,8 +1,10 @@
 <div class="modal" id="editTutorialModal" >
+
   <div class="modal-content">
     <span class="close" (click)="onCloseForm()">&times;</span>
     <h2> {{ isEdit ? 'Edit ':'add '}}Tutorial</h2>
     <form [formGroup]="tutorialForm" (ngSubmit)="OnFormSubmitted()">
+
       <div class="form-group">
         <label for="editTitle">Title:</label>
         <input type="text" id="editTitle"  class="form-control" formControlName="title">
@@ -13,6 +15,7 @@
           Title must be at least 3 characters long.
         </div>
       </div>
+
       <div class="form-group">
         <label for="editDescription">Description:</label>
         <input type="text" id="editDescription" class="form-control" formControlName="description">
@@ -23,6 +26,15 @@
           Description must be at least 10 characters long.
         </div>
       </div>
+
+      <div class="form-group">
+        <label class="mt-4">Published:</label>
+        <select class="form-select" formControlName="published">
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+      </div>
+
       <button type="submit" class="btn btn-primary">Save</button>
     </form>
   </div>

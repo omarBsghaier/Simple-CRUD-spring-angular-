@@ -25,7 +25,8 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
     this.tutorialForm = new FormGroup({
     title: new FormControl(this.tutorialSelected?.title, [Validators.required, Validators.minLength(3)]),
-    description: new FormControl(this.tutorialSelected?.description, [Validators.required, Validators.minLength(10)])
+    description: new FormControl(this.tutorialSelected?.description, [Validators.required, Validators.minLength(10)]),
+    published : new FormControl(this.tutorialSelected?.published,[Validators.required])
   });
   }
 

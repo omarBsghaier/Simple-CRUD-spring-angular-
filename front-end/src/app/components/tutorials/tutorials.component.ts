@@ -28,12 +28,9 @@ export class TutorialsComponent implements OnInit {
     this.loadTutorials();
   }
 
-  searchTutorials() {
-    if (this.title) {
-    //   this.tutorials = this.tutorialService.getTutorialsByTitle(this.title).subscribe() ;
-    } else {
-      this.loadTutorials();
-    }
+  searchTutorials( ) {
+    
+       this.tutorials = this.tutorials.filter( tuto => tuto.title.includes(this.title)) ;
   }
 
 
