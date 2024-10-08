@@ -15,10 +15,10 @@ This is a simple yet powerful application built with Angular 15 and Spring Boot,
 
 Each tutorial contains the following fields:
 
-ID: Unique identifier for each tutorial.
-Title: Title of the tutorial.
-Description: Brief description of the tutorial content.
-Published Status: Indicates whether the tutorial is published or not.
+- ID: Unique identifier for each tutorial.
+- Title: Title of the tutorial.
+- Description: Brief description of the tutorial content.
+- Published Status: Indicates whether the tutorial is published or not.
 
 ## Screenshots :
 
